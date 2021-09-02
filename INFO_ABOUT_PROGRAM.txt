@@ -1,0 +1,12 @@
+Lets consider the following situation. There are coins which have value 1, 3 and 4.
+The task of program's user is to choose the arbitrary natural number. 
+The task of the program is to find the shortest combination of coins (or combinations in some cases)
+which value is equal the number which was chossen by user.
+For example, lets say that the chossen number is 14. The shortest combination of coins is: {4, 4, 3, 3}.
+
+In this code, problem is solved by recurection. One can consider the various combinations as discrete space (the set of all possible combinations).
+Program is useing functions which could be considered as operators in that combination space. These functions 
+are used to propagate through combination space forward (when considered combination value is too small) and backwards(when combination value is too big, or when the chosen value is reached). 
+
+Program could check all combinations (which reaches chossen value) but it reducing the combintaion space to the set of combinations which are no longer than size of the shortest, already found combination. For example, for chossen value 14, when program found combination {4, 4, 3, 3}, it will not consider combinations which contain more then 4 coins.
+This solution reduces memory which is needed to run the program.
